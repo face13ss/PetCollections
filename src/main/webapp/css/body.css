@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.userInformation{
+    font-size: 20px;
+    color: white;
+}
+.userMoney{
+    font-size: 15px;
+    color: gold;
+}
+img {
+    width: 98%;
+    height: 98%;
+}
+#header {
+    background: #7e4402;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.item1 {
+    left:0;
+    height:300px;
+    width: 16%;
+    float:left;
+    padding:5px;
+    margin-top:10px;
+}
+
+body {
+    background-color: white;
+}
+
