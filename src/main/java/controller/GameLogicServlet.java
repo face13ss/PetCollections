@@ -1,7 +1,9 @@
 package controller;
 
+import model.Friend;
 import model.Pet;
 import model.User;
+import service.FriendDAO;
 import service.PetDAO;
 import service.PetTypeDAO;
 import service.UserDAO;
@@ -57,7 +59,7 @@ public class GameLogicServlet extends HttpServlet {
                 showShop(request,response);
                 break;
             case "friendList":
-
+                showFriends(request,response);
                 break;
             case "logout":
                 response.sendRedirect("/login");
@@ -106,6 +108,12 @@ public class GameLogicServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/gameView/shop.jsp");
         dispatcher.forward(request,response);
     }
+
+    private void showFriends(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/gameView/friends.jsp");
+        dispatcher.forward(request,response);
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -129,6 +137,9 @@ public class GameLogicServlet extends HttpServlet {
                 break;
             case "changePassword":
                 changePassword(request,response);
+                break;
+            case "friendList":
+                searchFriend(request,response);
                 break;
             case "logout":
                 session.invalidate();
@@ -187,6 +198,23 @@ public class GameLogicServlet extends HttpServlet {
             response.sendRedirect("/game?action=house");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    private void searchFriend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String friendList = request.getParameter("friendList");
+        if(friendList == null){
+            friendList ="";
+        }
+        switch (friendList){
+            case "search":
+                String searchName = request.getParameter("searchName");
+                FriendDAO friendDAO = new FriendDAO();
+                List<Friend> peopleList = friendDAO.showPeople(searchName);
+                request.setAttribute("user",user);
+                request.setAttribute("peopleList",peopleList);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/gameView/friends.jsp");
+                dispatcher.forward(request,response);
+                break;
         }
     }
 }

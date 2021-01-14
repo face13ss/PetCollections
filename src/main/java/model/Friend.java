@@ -5,6 +5,11 @@ public class Friend {
     private String displayName;
     private String inRelation;
 
+    public Friend(int id, String displayName){
+        this.id = id;
+        this.displayName = displayName;
+    }
+
     public Friend(int id, String displayName, String inRelation){
         this.id = id;
         this.displayName = displayName;
