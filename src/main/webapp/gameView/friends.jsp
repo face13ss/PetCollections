@@ -27,8 +27,8 @@
     <c:if test="${peopleList!=null}">
         <table border="1" cellpadding="5">
             <tr>
-                <td style="width: 100px">People Nam</td>
-                <td style="width: 100px">Action</td>
+                <td style="width: 100px"><h3>Display Name</h3></td>
+                <td style="width: 100px"><h3>Action</h3></td>
             </tr>
             <c:forEach items="${peopleList}" var="people">
                 <tr>
@@ -37,7 +37,7 @@
                         <form method="post">
                             <input type="hidden" name="friendList" value="addFriend">
                             <input type="hidden" name="peopleId" value="${people.getId()}">
-                            <input type="submit" value="Add Friend" >
+                            <input type="submit" value="Add Friend">
                         </form>
                     </td>
                 </tr>

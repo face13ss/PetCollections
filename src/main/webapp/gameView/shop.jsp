@@ -31,6 +31,7 @@
         <td style="width: 100px">1000</td>
         <td style="height: 50px;width: 50px;">
             <form method="post">
+                <input type="hidden" name="buyItem" value="eggs">
                 <input type="submit" value="Buy" style="height: 40px;width: 80px;">
             </form>
         </td>
@@ -41,7 +42,8 @@
         <td style="width: 100px">500</td>
         <td style="height: 50px;width: 100px;">
             <form method="post">
-                <input type="submit" disabled value="Out of Stock" style="height: 40px;width: 80px;">
+                <input type="hidden" name="buyItem" value="healBottle">
+                <input type="submit"  value="Buy" style="height: 40px;width: 80px;">
             </form>
         </td>
     </tr>

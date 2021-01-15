@@ -134,6 +134,7 @@ public class GameLogicServlet extends HttpServlet {
                 showDungeon(request, response);
                 break;
             case "shop":
+                doShop(request, response);
                 break;
             case "changePassword":
                 changePassword(request,response);
@@ -214,6 +215,19 @@ public class GameLogicServlet extends HttpServlet {
                 request.setAttribute("peopleList",peopleList);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/gameView/friends.jsp");
                 dispatcher.forward(request,response);
+                break;
+        }
+    }
+    private void doShop(HttpServletRequest request, HttpServletResponse response){
+        String buyItem = request.getParameter("buyItem");
+        if(buyItem == null){
+            buyItem = "";
+        }
+        switch (buyItem){
+            case "eggs":
+
+                break;
+            case "healBottle":
                 break;
         }
     }
