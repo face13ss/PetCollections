@@ -1,4 +1,6 @@
 .idea/
-build/
 gradle
+.gradle
+libs
+build
 .gradle
