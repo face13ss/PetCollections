@@ -1,12 +1,13 @@
-package service;
+package repository;
 
 import model.Friend;
+import repository.DataAccessObject;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FriendDAO extends DataAccessObject{
+public class FriendDAO extends DataAccessObject {
 
     private static final String SELECT_BY_NAME = "SELECT id, displayName FROM users where displayName like ?;";
     private static final String ADD_FRIENDS = "INSERT INTO relationships (userId, friendId, inRelation) values (?,?,?);";

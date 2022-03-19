@@ -1,10 +1,10 @@
-package service;
+package repository;
 
 import model.Pet;
 import model.PetType;
+import repository.PetDAO;
 
 import java.sql.*;
-import java.util.List;
 
 public class PetTypeDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/petcollections?useSSL=false";

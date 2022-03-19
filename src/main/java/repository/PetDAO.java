@@ -1,13 +1,13 @@
-package service;
+package repository;
 
 import model.Pet;
+import repository.IpetDAO;
 
-import javax.servlet.RequestDispatcher;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PetDAO implements IpetDAO{
+public class PetDAO implements IpetDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/petcollections?useSSL=false";
     private String jdbcUsername = "admin";
     private String jdbcPassword = "Admin@123";

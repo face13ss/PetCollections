@@ -3,10 +3,10 @@ package controller;
 import model.Friend;
 import model.Pet;
 import model.User;
-import service.FriendDAO;
-import service.PetDAO;
-import service.PetTypeDAO;
-import service.UserDAO;
+import repository.FriendDAO;
+import repository.PetDAO;
+import repository.PetTypeDAO;
+import repository.UserDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
